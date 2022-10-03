@@ -1,0 +1,53 @@
+<nav class="navbar bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand">Albumy</a>
+        <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#albumModal" (click)="addClick()">Dodaj album</button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <table class="table table-hover table-striped table-responsive">
+        <thead>
+            <tr>
+                <th>Nazwa albumu</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of albumDetails">
+                <td>{{item.title}}</td>
+                <td>
+                    <button (click)="edit(item)" data-bs-toggle="modal" data-bs-target="#albumModal" class="btn nt-se btn-secondary">Edytuj</button>
+                    <button (click)="deleteAlbumDetails(item.id)" class="btn nt-se btn-danger mx-2">Usuń</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="albumModal" tabindex="-1" aria-labelledby="albumModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="albumModalLabel">Nazwa albumu</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="albumForm">
+            <div class="mb-3">
+                <label class="form-label">Podaj nazwę</label>
+                <input type="text" class="form-control" placeholder="Nazwa" formControlName="title">
+              </div>   
+            </form>           
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
+          <button type="button" class="btn btn-primary" (click)="postAlbumDetails()" *ngIf="showAddBtn">Dodaj album</button>
+          <button type="button" class="btn btn-primary" (click)="updateAlbumDetails()" *ngIf="showEditBtn">Edytuj album</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

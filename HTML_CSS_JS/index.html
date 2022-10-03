@@ -1,0 +1,80 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE_edge">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <title>Progress bar</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+    <div class="grid-wrapper">
+        <div class="component">
+            <span class="in_circle">Current<br><p class="in_circle_1">999m</p><br>50m goal</span>
+
+            <svg viewbox="0 0 100 100">
+                <linearGradient id="gradient" x1="0" y1="0" x2="0" y2="100%">
+                     <stop offset="0%" stop-color="#56c4fb" />
+                     <stop offset="100%" stop-color="#0baeff" />
+                 </linearGradient>
+                 <path class="grey" d="M30,90 A40,40 0 1,1 80,90" fill='none' />
+                 <path id="purple" fill='none' class="purple" d="M30,90 A40,40 0 1,1 80,90" />
+           </svg>
+        </div>
+        <div class="component2"><p class="name">GOAL</p></div>
+        <div class="component3"><b class="minutes">{blank}</b>more mins. to achieve this <br><p class="week_month">{blank}'s Goal.</p></div>
+        <div class="component4"><b><p class="current_streak"><span class="first_place">{blank}</p></b>Current Streak</div>
+        <div class="component5"><b><p class="best_streak">{blank}</p></b>Best Streak</div>
+        <div class="component6">leaderboard</div>
+        <div class="component7">
+            <select class="select_month_week" onchange="selectWeekMonth(this)">
+                <option selected id="select_week" >Week</option>
+                <option id="select_Month">Month</option>
+            </select>
+        </div>
+        <div class="component8">
+            <table>
+            <tr>
+                <td><span class="circle">1</span></td>
+                <td><span class="FP">{blank}</span></td>
+                <td><span class="distance_P1">{blank}</span></td>
+                <td><span class="sign_P1"><img src="gif/Green_Arrow_Left.gif" id="img_P1"></span></td>
+              </tr>
+            </table>
+        </div>
+        <div class="component9">
+            <table>
+                <tr>
+                    <td><span class="circle_two">2</span></td>
+                    <td><span class="second_place">{blank}</span></td>
+                    <td><span class="distance_P2">{blank}</span></td>
+                    <td><span class="sign_P2"><img src="gif/stable.gif" id="img_P2"></span></td>
+                  </tr>
+            </table>
+        </div>
+        <div class="component10">
+            <table>
+                <tr>
+                    <td><span class="circle_three">3</span></td>
+                    <td><span class="third_place">{blank}</span></td>
+                    <td><span class="distance_P3">{blank}</span></td>
+                    <td><span class="sign_P3"><img src="gif/Green_Arrow_Left.gif" id="img_P3"></span></td>
+                  </tr>
+            </table>
+        </div>
+        <div class="component11">
+            <table>
+                <tr>
+                    <td><span class="circle_user">{blank}</span></td>
+                    <td><span class="user_place">{blank}</span></td>
+                    <td><span class="distance_U">{blank}</span></td>
+                    <td><span class="sign_U"><img src="gif/White_Arrow_Left.gif" id="img_P4"></span></td>
+                  </tr>
+            </table>
+        </div>
+    </div>
+        <script src="js/script.js">
+
+        </script>
+    </body>
+</html>
